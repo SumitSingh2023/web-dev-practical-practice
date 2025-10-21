@@ -1,173 +1,160 @@
-
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false); // mobile menu
-  const [propertyOpen, setPropertyOpen] = useState(false); // property dropdown (mobile)
+  const [isOpen, setIsOpen] = useState(false); // mobile menu toggle
+  const [isPropertyOpen, setIsPropertyOpen] = useState(false); // desktop dropdown
+  const [isMobilePropertyOpen, setIsMobilePropertyOpen] = useState(false); // mobile dropdown
+  const location = useLocation();
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Career", path: "/career" },
+    { name: "Resources", path: "/resources" },
+    { name: "Join Us", path: "/join" },
+    { name: "Contact", path: "/contact" },
+    { name: "News & Articles", path: "/news-articles" },
+  ];
+
+  const propertyLinks = [
+    { name: "Lakeview Meadows", path: "/property/lakeview-meadows" },
+    { name: "Pulera Affordable Flats, Haridwar", path: "/property/pulera-haridwar" },
+    { name: "Kia Farms, Jaipur", path: "/property/kia-farms" },
+    { name: "Township in Khatushyamji", path: "/property/khatushyamji" },
+  ];
 
   return (
-    <nav className="bg-gray-900 text-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          {/* ✅ Logo */}
-          <Link
-            to="/"
-            className="text-2xl font-bold tracking-wide text-blue-400"
-          >
-            SUGGESTIC
-          </Link>
+    <nav className="bg-blue-50 shadow-md fixed top-0 left-0 w-full z-50">
+      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/">
+          <img src={logo} alt="Logo" className="h-15" />
+        </Link>
 
-          {/* ✅ Hamburger Menu for Mobile */}
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-6 items-center">
+          {navLinks.slice(0, 2).map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className={`relative text-gray-800 font-medium transition duration-300 group ${
+                location.pathname === link.path ? "text-blue-600" : ""
+              }`}
+            >
+              {link.name}
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          ))}
+
+          {/* Property Dropdown */}
           <div
-            className="md:hidden text-2xl cursor-pointer"
-            onClick={() => setOpen(!open)}
+            className="relative"
+            onMouseEnter={() => setIsPropertyOpen(true)}
+            onMouseLeave={() => setIsPropertyOpen(false)}
           >
-            {open ? "✖" : "☰"}
-          </div>
-
-          {/* ✅ Desktop Menu */}
-          <div className="hidden md:flex space-x-6 items-center">
-            <Link to="/" className="hover:text-blue-400 transition">Home</Link>
-            <Link to="/about" className="hover:text-blue-400 transition">About</Link>
-
-            {/* 🏠 Property Dropdown */}
-            <div className="relative group">
-              <button className="hover:text-blue-400 transition flex items-center gap-1">
-                Property ▾
-              </button>
-              <div className="absolute hidden group-hover:block bg-gray-800 rounded-md shadow-lg mt-2 w-44">
-                <Link
-                  to="/property/phulera"
-                  className="block px-4 py-2 hover:bg-gray-700"
-                >
-                  Lake View Meadows,Phulera
-                </Link>
-                <Link
-                  to="/property/haridwar"
-                  className="block px-4 py-2 hover:bg-gray-700"
-                >
-                  Affordable Flats,Haridwar
-                </Link>
-                <Link
-                  to="/property/jaipur"
-                  className="block px-4 py-2 hover:bg-gray-700"
-                >
-                  Kia Farms,Jaipur
-                </Link>
-                <Link
-                  to="property/khatushyamji"
-                  className="block px-4 py-2 hover:bg-gray-700"
-
-                >  Township in Khatushyamji
-                </Link>
-              </div>
-            </div>
-
-            <Link to="/career" className="hover:text-blue-400 transition">Career</Link>
-            <Link to="/resources" className="hover:text-blue-400 transition">Resources</Link>
-            <Link to="/joinus" className="hover:text-blue-400 transition">Join</Link>
-            <Link to="/contact" className="hover:text-blue-400 transition">Contact</Link>
-            <Link to="/article" className="hover:text-blue-400 transition">Article</Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ✅ Mobile Menu */}
-      {open && (
-        <div className="md:hidden bg-gray-800 animate-slideDown">
-          <Link
-            to="/"
-            onClick={() => setOpen(false)}
-            className="block px-4 py-2 border-b border-gray-700 hover:bg-gray-700"
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            onClick={() => setOpen(false)}
-            className="block px-4 py-2 border-b border-gray-700 hover:bg-gray-700"
-          >
-            About
-          </Link>
-
-          {/* 🏠 Property Dropdown (Mobile) */}
-          <div>
             <button
-              onClick={() => setPropertyOpen(!propertyOpen)}
-              className="w-full text-left px-4 py-2 border-b border-gray-700 hover:bg-gray-700 flex justify-between items-center"
+              className={`relative text-gray-800 font-medium transition duration-300 group ${
+                isPropertyOpen ? "text-blue-600" : ""
+              }`}
             >
               Property
-              <span>{propertyOpen ? "▲" : "▼"}</span>
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </button>
-            {propertyOpen && (
-              <div className="bg-gray-700">
+
+            <div
+              className={`absolute left-0 mt-2 w-60 bg-white shadow-lg border rounded-lg transition-all duration-300 overflow-hidden ${
+                isPropertyOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              {propertyLinks.map((p) => (
                 <Link
-                  to="/property/phulera"
-                  onClick={() => setOpen(false)}
-                  className="block px-6 py-2 border-b border-gray-600 hover:bg-gray-600"
+                  key={p.name}
+                  to={p.path}
+                  className="block px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 transition duration-200"
                 >
-                  Lake View Meadows, Phulera
+                  {p.name}
                 </Link>
-                <Link
-                  to="/property/haridwar"
-                  onClick={() => setOpen(false)}
-                  className="block px-6 py-2 border-b border-gray-600 hover:bg-gray-600"
-                >
-                  Affordable Flats, Haridwar
-                </Link>
-                <Link
-                  to="/property/jaipur"
-                  onClick={() => setOpen(false)}
-                  className="block px-6 py-2 hover:bg-gray-600"
-                >
-                  Kia Farms, Jaipur
-                </Link>
-                <Link 
-                  to="/property/khatushyamji"
-                  onClick={()=>setOpen(false)}
-                  className="block px-6 py-2 hover:bg-gray-600"
-                
-                >Township in Khatushyamji</Link>
-              </div>
-            )}
+              ))}
+            </div>
           </div>
 
-          <Link
-            to="/career"
-            onClick={() => setOpen(false)}
-            className="block px-4 py-2 border-b border-gray-700 hover:bg-gray-700"
-          >
-            Career
-          </Link>
-          <Link
-            to="/resources"
-            onClick={() => setOpen(false)}
-            className="block px-4 py-2 border-b border-gray-700 hover:bg-gray-700"
-          >
-            Resources
-          </Link>
-          <Link
-            to="/joinus"
-            onClick={() => setOpen(false)}
-            className="block px-4 py-2 border-b border-gray-700 hover:bg-gray-700"
-          >
-            Join
-          </Link>
-          <Link
-            to="/contact"
-            onClick={() => setOpen(false)}
-            className="block px-4 py-2 border-b border-gray-700 hover:bg-gray-700"
-          >
-            Contact
-          </Link>
-          <Link
-            to="/article"
-            onClick={() => setOpen(false)}
-            className="block px-4 py-2 hover:bg-gray-700"
-          >
-            Article
-          </Link>
+          {/* Remaining Links */}
+          {navLinks.slice(2).map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className={`relative text-gray-800 font-medium transition duration-300 group ${
+                location.pathname === link.path ? "text-blue-600" : ""
+              }`}
+            >
+              {link.name}
+              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-gray-800 text-xl"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? "✕" : "☰"}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white shadow-lg border-t transition-all duration-300">
+          <div className="flex flex-col space-y-2 py-4 px-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={() => setIsOpen(false)}
+                className={`text-gray-800 font-medium transition duration-300 ${
+                  location.pathname === link.path ? "text-blue-600" : ""
+                } hover:underline`}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            {/* Property dropdown mobile */}
+            <div className="border-t pt-3">
+              <button
+                onClick={() => setIsMobilePropertyOpen(!isMobilePropertyOpen)}
+                className="flex justify-between w-full text-gray-800 font-medium"
+              >
+                Property
+                <span
+                  className={`transform transition-transform duration-300 ${
+                    isMobilePropertyOpen ? "rotate-180" : ""
+                  }`}
+                >
+                  ▼
+                </span>
+              </button>
+
+              <div
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  isMobilePropertyOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
+                }`}
+              >
+                {propertyLinks.map((p) => (
+                  <Link
+                    key={p.name}
+                    to={p.path}
+                    onClick={() => setIsOpen(false)}
+                    className="block pl-4 py-1 text-gray-600 hover:text-blue-600 transition duration-200"
+                  >
+                    {p.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </nav>
@@ -175,4 +162,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
