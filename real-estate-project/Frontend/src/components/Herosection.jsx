@@ -6,6 +6,7 @@ import PropertyListing from "./PropertyCard";
 import RealEstateServices from "./RealEstateService";
 import ConstructionProjects from "./ContructionProjects";
 import VideoShowcase from "./VideoShowcase";
+import ReviewSection from "./Reviewsection";
 
 function HeroSection() {
     const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +19,7 @@ function HeroSection() {
 
     return (
         <>
-            <div className="bg-gray-50 px-6 pb-5 pt-24 md:py-28">
+            <div className="bg-gray-50 px-6 pb-5 pt-24 md:py-28 mt-3">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center md:justify-between gap-12">
 
                     {/* Left side - Heading with animation */}
@@ -45,6 +46,7 @@ function HeroSection() {
             <RealEstateServices/>
             <ConstructionProjects/>
             <VideoShowcase/>
+            <ReviewSection/>
 
         </>
     );

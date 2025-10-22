@@ -83,7 +83,7 @@ const StatsSection = () => {
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
                         {stats.map((stat) => (
                             <div key={stat.id} className="text-center">
-                                <div className="text-3xl md:text-4xl font-bold text-[#0d6efd] mb-2">
+                                <div className="text-3xl md:text-4xl font-bold text-[#242426] mb-2">
                                     {formatNumber(stat.value)}{stat.suffix}
                                 </div>
                                 <div className="text-gray-600 font-medium text-lg">

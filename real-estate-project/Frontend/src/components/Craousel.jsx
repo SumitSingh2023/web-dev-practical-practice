@@ -1,3 +1,5 @@
+
+
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import image1 from "../assets/cr-img-2.jpg"
@@ -5,8 +7,6 @@ import image2 from "../assets/cr-img-2.jpg"
 import image3 from "../assets/cr-img-3.jpg"
 import image4 from "../assets/download-1.jpg"
 import image5 from "../assets/cr-img-4.jpg"
-
-//const images = [image1, image2, image3,image4]
 
 const images = [
   image1,
@@ -17,85 +17,74 @@ const images = [
 ];
 
 function Carousel() {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Automatic slide every 3 seconds
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % images.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
+  // Automatic slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-    };
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
 
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % images.length);
-    };
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
 
-    return (
-        <div className="relative  max-w-8xl mx-auto overflow-hidden rounded-lg shadow-lg">
-            {/* Images */}
-            <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-                {images.map((img, index) => (
-                    <img
-                        key={index}
-                        src={img}
-                        alt={`Slide ${index + 1}`}
-                        className="w-full flex-shrink-0 object-cover h-36        
-                            /* Mobile height */
-                            sm:h-72     
-                            /* Small screens */
-                            md:h-80   
-                            /* Medium screens */
-                            lg:h-[300px] 
-                            /* Large screens */
-                            xl:h-[400px] 
-                            /* Extra large screens */
-                            transition-all 
-                            duration-500
-                        "
-                    />
-                ))}
+  return (
+    <div className="relative w-full overflow-hidden rounded-xl shadow-2xl">
+      {/* Images */}
+      <div 
+        className="flex transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images.map((img, index) => (
+          <img 
+            key={index} 
+            src={img} 
+            alt={`Slide ${index + 1}`} 
+            className="w-full flex-shrink-0 object-cover h-60 sm:h-80 md:h-[450px] lg:h-[550px] xl:h-[650px] transition-all duration-500"
+          />
+        ))}
+      </div>
 
-            </div>
+      {/* Left Arrow */}
+      <button 
+        onClick={prevSlide}
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-90 text-gray-800 p-3 rounded-full hover:bg-opacity-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
+      >
+        <ChevronLeft size={28} />
+      </button>
 
-            {/* Left Arrow */}
-            <button
-                onClick={prevSlide}
-                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition"
-            >
-                <ChevronLeft size={24} />
-            </button>
+      {/* Right Arrow */}
+      <button 
+        onClick={nextSlide}
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-90 text-gray-800 p-3 rounded-full hover:bg-opacity-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
+      >
+        <ChevronRight size={28} />
+      </button>
 
-            {/* Right Arrow */}
-            <button
-                onClick={nextSlide}
-                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition"
-            >
-                <ChevronRight size={24} />
-            </button>
-
-            {/* Dots */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                {images.map((_, index) => (
-                    <span
-                        key={index}
-                        className={`h-3 w-3 rounded-full cursor-pointer transition-all ${index === currentIndex ? "bg-gray-800 w-6" : "bg-gray-400"
-                            }`}
-                        onClick={() => setCurrentIndex(index)}
-                    ></span>
-                ))}
-            </div>
-        </div>
-    );
+      {/* Dots */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className={`h-3 rounded-full cursor-pointer transition-all duration-300 ${
+              index === currentIndex 
+                ? "bg-white w-8 shadow-lg" 
+                : "bg-white bg-opacity-50 w-3 hover:bg-opacity-80"
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Carousel;
-
 

@@ -74,9 +74,9 @@ const VideoShowcase = () => {
 
                 {/* Header Section */}
                 <div className="text-center mb-12">
-                    <span className="text-[#0d6efd] font-semibold text-lg mb-2 block">PROPERTY VIDEOS</span>
+                    <span className="text-gray-500 font-semibold text-lg mb-2 block">PROPERTY VIDEOS</span>
                     <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                        Virtual <span className="text-[#0d6efd]">Property Tours</span>
+                        Virtual Property Tours
                     </h1>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                         Take virtual tours of our premium properties and experience them from the comfort of your home.
@@ -153,7 +153,7 @@ const VideoShowcase = () => {
 
                                 {/* Video Info */}
                                 <div className="p-4">
-                                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#0d6efd] transition-colors">
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#67f5b3] transition-colors">
                                         {project.title}
                                     </h3>
                                     <div className="flex items-center text-gray-600 mb-2">
