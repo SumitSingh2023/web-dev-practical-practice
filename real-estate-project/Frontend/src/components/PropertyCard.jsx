@@ -27,14 +27,14 @@ const PropertyCard = ({
 
         {/* Tag */}
         <div className="absolute top-3 left-3">
-          <span className="bg-[#afdd51] text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+          <span className="bg-black text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
             {tag}
           </span>
         </div>
 
         {/* Property Type */}
         <div className="absolute top-3 right-3">
-          <span className="bg-white text-emerald-700 px-2 py-1 rounded text-xs font-semibold border border-emerald-600">
+          <span className="bg-white text-black  px-2 py-1 rounded text-xs font-semibold border border-[#afdd51]">
             {type}
           </span>
         </div>
@@ -63,7 +63,7 @@ const PropertyCard = ({
               d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
             />
           </svg>
-          <h3 className="text-lg font-semibold text-gray-800 transition-colors duration-300 cursor-pointer hover:text-emerald-600">
+          <h3 className="text-lg font-semibold text-gray-800 transition-colors duration-300 cursor-pointer hover:text-[#afdd51]">
             {place}
           </h3>
         </div>

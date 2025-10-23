@@ -42,7 +42,7 @@ const Footer = () => {
                 { label: "About Us", link: "/about" },
                 { label: "Contact Us", link: "/contact" },
                 { label: "Get My Registry", link: "/registry" },
-                { label: "Upcoming Projects", link: "/projects" },
+                { label: "Upcoming Projects", link: "/newsAndarticle" },
               ].map((item, idx) => (
                 <li key={idx}>
                   <a

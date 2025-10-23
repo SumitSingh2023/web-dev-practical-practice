@@ -53,7 +53,7 @@ const AboutSection = () => {
         <div className="space-y-10">
           {services.map((service) => (
             <div key={service.id} className="flex gap-6 group cursor-pointer transition-all duration-300 hover:translate-x-2">
-              <h3 className="text-3xl md:text-4xl font-bold text-black min-w-[40px] group-hover:text-green-700 transition-colors duration-300">
+              <h3 className="text-3xl md:text-4xl font-bold text-black min-w-[40px] group-hover:text-[#afdd51] transition-colors duration-300">
                 {service.id}
               </h3>
               <div className="transition-all duration-300">
