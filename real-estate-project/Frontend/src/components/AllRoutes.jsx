@@ -2,7 +2,7 @@ import Home from "../pages/Home";
 import AboutUs from "../pages/AboutUs";
 import Property from "../pages/Property";
 import Carrer from "../pages/Career"
-import Resourses from "../pages/resourses";
+import Resourses from "../pages/Resourses";
 import JoinUs from "../pages/JoinUs";
 import Contact from "../pages/Contact";
 import NewsAndArticle from "../pages/NewsAndArticle";
