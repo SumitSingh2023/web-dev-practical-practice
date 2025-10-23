@@ -30,7 +30,7 @@ const ConstructionProjects = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
             Our Construction Projects
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Explore our diverse range of ongoing construction projects across different property types.
           </p>
         </div>
@@ -53,9 +53,7 @@ const ConstructionProjects = () => {
                 {/* Property Type Badge */}
                 <div className="absolute top-4 left-4">
                   <span
-                    className={`${getTypeColor(
-                      project.type
-                    )} px-3 py-2 rounded-lg text-sm font-semibold`}
+                    className="bg-[#afdd51] rounded-2xl p-2"
                   >
                     {project.type}
                   </span>
@@ -67,9 +65,9 @@ const ConstructionProjects = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {project.title}
                 </h3>
-                <div className="flex items-center text-gray-600">
+                <div className="flex items-center text-gray-800">
                   <svg
-                    className="w-5 h-5 mr-2 text-green-600"
+                    className="w-5 h-5 mr-2 text-[#afdd51]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -108,7 +106,7 @@ const ConstructionProjects = () => {
 
             {/* Smooth Hover Button */}
             <button className="relative px-8 py-3 rounded-lg font-semibold text-lg text-black bg-white overflow-hidden group transition-all duration-300">
-              <span className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+              <span className="absolute inset-0 bg-[#afdd51] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
               <span className="relative z-10">Contact Now</span>
             </button>
           </div>

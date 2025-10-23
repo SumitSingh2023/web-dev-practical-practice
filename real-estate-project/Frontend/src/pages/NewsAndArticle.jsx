@@ -94,7 +94,7 @@ const PaperCuttings = () => {
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#afdd51] transition-colors duration-300">
                       {cutting.title}
                     </h3>
                   </div>
@@ -109,10 +109,10 @@ const PaperCuttings = () => {
 
                   {/* Action Buttons */}
                   <div className="flex space-x-3 pt-4 border-t border-gray-200">
-                    <button className="flex-1 bg-gray-900 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-green-600 transition-all duration-300 hover:scale-105">
+                    <button className="flex-1 bg-gray-900 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-[#afdd51] transition-all duration-300 hover:scale-105">
                       View Full Article
                     </button>
-                    <button className="w-10 h-10 border border-gray-300 rounded-lg flex items-center justify-center hover:border-green-500 hover:text-green-600 transition-all duration-300">
+                    <button className="w-10 h-10 border border-gray-300 rounded-lg flex items-center justify-center hover:border-[#afdd51] hover:text-[#afdd51] transition-all duration-300">
                       ⬇️
                     </button>
                   </div>

@@ -153,7 +153,7 @@ const VideoShowcase = () => {
 
                                 {/* Video Info */}
                                 <div className="p-4">
-                                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#67f5b3] transition-colors">
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#afdd51] transition-colors">
                                         {project.title}
                                     </h3>
                                     <div className="flex items-center text-gray-600 mb-2">

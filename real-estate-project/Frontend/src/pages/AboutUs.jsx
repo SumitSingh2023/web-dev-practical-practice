@@ -31,7 +31,7 @@ const AboutUs = () => {
                 key={index}
                 className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-green-200 group"
               >
-                <div className="text-4xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-500">
+                <div className="text-4xl font-bold text-gray-900 mb-2 group-hover:text-[#afdd51] transition-colors duration-500">
                   {stat.number}
                 </div>
                 <div className="text-gray-600 group-hover:text-gray-800 transition-colors duration-500">
@@ -74,7 +74,7 @@ const AboutUs = () => {
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-green-50 transition-all duration-300 hover:translate-x-2 group"
                   >
                     <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 group-hover:scale-110 transition-all duration-300">
-                      <span className="text-green-600 font-bold">✓</span>
+                      <span className="text-[#afdd51] font-bold">✓</span>
                     </div>
                     <span className="text-gray-700 group-hover:text-gray-900">{feature}</span>
                   </div>
@@ -84,7 +84,7 @@ const AboutUs = () => {
               {/* Custom Button with Left to Right Hover Effect */}
               <button className="relative bg-transparent text-gray-900 px-8 py-4 rounded-lg font-semibold border-2 border-gray-900 overflow-hidden group transition-all duration-500 hover:border-green-600">
                 <span className="relative z-10 group-hover:text-white transition-colors duration-300">Contact Us</span>
-                <div className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
+                <div className="absolute inset-0 bg-[#afdd51] w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
               </button>
             </div>
             
@@ -225,14 +225,14 @@ const AboutUs = () => {
                 className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:border-green-300 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group"
               >
                 <div className="flex items-center mb-4">
-                  <span className="text-green-500 text-2xl group-hover:scale-110 transition-transform duration-300">⭐⭐⭐⭐⭐</span>
+                  <span className="text-[#afdd51] text-2xl group-hover:scale-110 transition-transform duration-300">⭐⭐⭐⭐⭐</span>
                 </div>
                 <p className="text-gray-600 mb-6 italic leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   {testimonial.testimonial}
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4 group-hover:bg-green-200 group-hover:scale-110 transition-all duration-300">
-                    <span className="font-semibold text-green-600">{testimonial.initials}</span>
+                    <span className="font-semibold text-[#afdd51]">{testimonial.initials}</span>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 group-hover:text-gray-800 transition-colors duration-300">{testimonial.name}</h4>
@@ -256,15 +256,15 @@ const AboutUs = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {/* Button 1 */}
-            <button className="relative bg-transparent text-white px-8 py-4 rounded-lg font-semibold border-2 border-white overflow-hidden group transition-all duration-500 hover:border-green-400 hover:scale-105">
+            <button className="relative bg-transparent text-white px-8 py-4 rounded-lg font-semibold border-2 border-white overflow-hidden group transition-all duration-500 hover:border-[#afdd51] hover:scale-105">
               <span className="relative z-10 group-hover:text-gray-900 transition-colors duration-300">Browse Properties</span>
-              <div className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
+              <div className="absolute inset-0 bg-[#afdd51] w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
             </button>
             
             {/* Button 2 */}
             <button className="relative bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold border-2 border-white overflow-hidden group transition-all duration-500 hover:scale-105">
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">Contact Agent</span>
-              <div className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
+              <div className="absolute inset-0 bg-[#afdd51] w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
             </button>
           </div>
         </div>

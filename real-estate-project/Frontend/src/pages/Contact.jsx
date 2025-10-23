@@ -55,7 +55,7 @@ const ContactUs = () => {
                 {/* Phone */}
                 <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:bg-green-50 transition-all duration-300 group">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 group-hover:scale-110 transition-all duration-300">
-                    <span className="text-green-600 text-xl">📞</span>
+                    <span className="text-[#afdd51] text-xl">📞</span>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Phone Number</h3>
@@ -68,7 +68,7 @@ const ContactUs = () => {
                 {/* Email */}
                 <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:bg-green-50 transition-all duration-300 group">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 group-hover:scale-110 transition-all duration-300">
-                    <span className="text-green-600 text-xl">✉️</span>
+                    <span className="text-[#afdd51] text-xl">✉️</span>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Email Address</h3>
@@ -81,7 +81,7 @@ const ContactUs = () => {
                 {/* Office Address */}
                 <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:bg-green-50 transition-all duration-300 group">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 group-hover:scale-110 transition-all duration-300">
-                    <span className="text-green-600 text-xl">🏢</span>
+                    <span className="text-[#afdd51] text-xl">🏢</span>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Delhi Office</h3>
@@ -96,7 +96,7 @@ const ContactUs = () => {
                 {/* Business Hours */}
                 <div className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:bg-green-50 transition-all duration-300 group">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200 group-hover:scale-110 transition-all duration-300">
-                    <span className="text-green-600 text-xl">🕒</span>
+                    <span className="text-[#afdd51] text-xl">🕒</span>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Business Hours</h3>
@@ -232,7 +232,7 @@ const ContactUs = () => {
                   className="relative bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold overflow-hidden group transition-all duration-500 hover:scale-105 w-full"
                 >
                   <span className="relative z-10">Send Message</span>
-                  <div className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
+                  <div className="absolute inset-0 bg-[#afdd51] w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
                 </button>
               </form>
             </div>
@@ -346,11 +346,11 @@ const ContactUs = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="relative bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold overflow-hidden group transition-all duration-500 hover:scale-105">
               <span className="relative z-10">Call Now: +91 90517 45525</span>
-              <div className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
+              <div className="absolute inset-0 bg-[#afdd51] w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
             </button>
             <button className="relative bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold overflow-hidden group transition-all duration-500 hover:scale-105">
               <span className="relative z-10">WhatsApp Us</span>
-              <div className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
+              <div className="absolute inset-0 bg-[#afdd51] w-0 group-hover:w-full transition-all duration-500 ease-out origin-left"></div>
             </button>
           </div>
         </div>

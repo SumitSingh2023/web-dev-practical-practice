@@ -45,7 +45,7 @@ const AboutSection = () => {
           <button className="relative bg-gray-900 text-white px-8 py-4 rounded-lg text-lg font-medium overflow-hidden group transition-all duration-300 hover:shadow-xl">
             <span className="relative z-10">View Properties</span>
             {/* Hover background that slides from left to right */}
-            <div className="absolute inset-0 bg-green-600 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></div>
+            <div className="absolute inset-0 bg-[#afdd51] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></div>
           </button>
         </div>
 

@@ -24,7 +24,7 @@ const Footer = () => {
             <div className="flex flex-col items-center lg:items-start mb-4">
               {/* Simple logo — all styling removed */}
               <img
-                className="w-20 h-auto object-contain"
+                className="w-20 h-auto object-contain bg-white rounded-full"
                 src={logo}
                 alt="Suggestic Buildcon Logo"
               />
@@ -47,7 +47,7 @@ const Footer = () => {
                 <li key={idx}>
                   <a
                     href={item.link}
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
+                    className="text-gray-300 hover:text-[#afdd51] transition-colors duration-300"
                   >
                     {item.label}
                   </a>
@@ -101,7 +101,7 @@ const Footer = () => {
                 type="submit"
                 className="relative w-full px-6 py-3 rounded-lg font-semibold text-sm text-black bg-white overflow-hidden group transition-all duration-300"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                <span className="absolute inset-0 bg-[#afdd51] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
                 <span className="relative z-10">Subscribe Now</span>
               </button>
             </form>
@@ -114,7 +114,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm text-center md:text-left mb-4 md:mb-0">
-            © {new Date().getFullYear()} Suggestic Buildcon Pvt. Ltd. All rights reserved.
+            © 2015 Suggestic Buildcon Pvt. Ltd. All rights reserved.
           </p>
 
           {/* Socials */}

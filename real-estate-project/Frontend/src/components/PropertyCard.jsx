@@ -27,7 +27,7 @@ const PropertyCard = ({
 
         {/* Tag */}
         <div className="absolute top-3 left-3">
-          <span className="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+          <span className="bg-[#afdd51] text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
             {tag}
           </span>
         </div>
@@ -45,7 +45,7 @@ const PropertyCard = ({
         {/* Location */}
         <div className="flex items-center mb-2">
           <svg
-            className="w-4 h-4 text-emerald-600 mr-2"
+            className="w-4 h-4 text-[#afdd51] mr-2"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -132,7 +132,7 @@ const PropertyCard = ({
           <span className="relative z-10 transition-colors duration-500 group-hover:text-black">
             Enquire Now
           </span>
-          <span className="absolute inset-0 bg-green-300 origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100"></span>
+          <span className="absolute inset-0 bg-[#afdd51] origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100"></span>
         </button>
 
       </div>
